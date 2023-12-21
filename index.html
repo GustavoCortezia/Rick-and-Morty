@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+    <img src="./imagens/Captura de tela 2023-12-19 141659.png" alt="icone" srcset="">
+    <h1>API de Rick and Morty</h1>
+    <div class="pesquisa">
+        <input type="text" id="busca" class="busca" placeholder="Procure um personagem" oninput="procuraPersonagem()" >
+        <button onclick="procuraPersonagem()" class="pesquisa"> <img src="./imagens/search-icon.webp" alt="icone pesquisa" srcset=""> </button>
+    </div>
+    </header>
+
+    <main>
+
+        <ul id="lista" class="listaPersonagens"></ul>
+
+        <img id="logo" src="./imagens/rick-and-morty-portal-shoes-white-clothing-zavvi-23 (3).png" alt="" srcset="">
+
+    </main>
+
+    <footer>
+        <p>PERSONAGENS: <span id="footerPerson">XX</span>    LOCALIZACOES: <span>XX</span>   EPISODIOS: <span>XX</span> </p>
+        <p>Desenvolvida por: <b>Gustavo Cortezia</b> em 2023</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./api.js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>
