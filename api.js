@@ -1,3 +1,3 @@
 const api = axios.create({
-    baseURL: 'https://rickandmortyapi.com/api/character'
+    baseURL: 'https://rickandmortyapi.com/api/'
   })
