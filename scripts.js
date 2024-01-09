@@ -19,35 +19,51 @@ async function getPersonagens(page) {
     }
 }
 
-function criaCard(characters) {
-    lista.innerHTML = '';
-    
-    characters.forEach(async character => {
-        const card = document.createElement('div');
-        const infos = document.createElement('div');
-        card.classList.add('card')
-        infos.classList.add('infos')
 
-        const response = await api.get(character.episode[character.episode.length - 1])
-        const episodeLink = response.data.name
+async function criaCard(characters) {
+    lista.innerHTML = '';
+
+    for (let i = 0; i < characters.length; i += 2) {
+        const cardContainer = document.createElement('div');
+        cardContainer.classList.add('cardContainer');
+
+        for (let j = i; j < i + 2 && j < characters.length; j++) {
+            const character = characters[j];
+            const card = document.createElement('div');
+            const infos = document.createElement('div');
+            card.classList.add('card');
+            infos.classList.add('infos');
+
+            const response = await api.get(character.episode[character.episode.length - 1]);
+            const episodeLink = response.data.name;
+
+            infos.innerHTML = `<img class="imagemCard" src="${character.image}">`
 
             card.innerHTML = `
-            <img class="imagemCard" src="${character.image}">`
-            infos.innerHTML = `
-                <h2 class="nome" > ${character.name}</h2>
-                <h3 class="status" >${character.status} - ${character.species}</h3>
+                <h2 class="nome">${character.name}</h2>
+                <h3 class="status">${character.status} <span> - ${character.species}</span></h3>
                 <p class="ultimaLocal">
                     Última localização conhecida <br>
-                    <b> ${character.location.name} </b> </p>
+                    <b>${character.location.name}</b>
+                </p>
                 <p class="ultimoEP">
-                    Visto a última vez em: <b> ${episodeLink} </b> </p>
-                `
+                    Visto a última vez em: <br>
+                    <b>${episodeLink}</b>
+                </p>
+            `;
 
-            card.append(infos);
-            lista.append(card); 
-        });
+            infos.append(card);
+            cardContainer.append(infos);
+        }
 
+        lista.append(cardContainer);
+
+        if (i + 2 < characters.length) {
+            lista.append(document.createElement('br'));
+        }
+    }
 }
+
 
 function renderizarConteudo(data) {
     lista.innerHTML = '';
@@ -67,6 +83,7 @@ function botaoPaginacao() {
 
     const botaoAnterior = document.createElement('button');
     botaoAnterior.textContent = 'Anterior';
+    botaoAnterior.classList.add('btnAnterior');
 
     const botaoProximo = document.createElement('button');
     botaoProximo.textContent = 'Proximo';
