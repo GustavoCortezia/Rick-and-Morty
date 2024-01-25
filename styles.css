@@ -4,6 +4,11 @@
     padding: 0; */
 }
 
+header {
+    background-color: rgb(22, 47, 22);
+    border-bottom: 5px solid white;
+}
+
 
 #logo {
     width: 300px;
@@ -11,22 +16,25 @@
     margin-left: 38%;
 }
 
+#topo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
 h1 {
     text-align: center;
-    color: rgb(1, 65, 1);
-    font-size: 50px;
+    color: rgb(255, 255, 255) !important;
+    font-size: 25%;
 
 }
 
-.pesquisa button img{
-    width: 20px;
-    height: 20px;
+.input-pesquisa {
+    display: flex;
+    justify-content: center;
 }
 
-.pesquisa button {
-    border: none;
-    background-color: white;
-}
 
 .pesquisa input[type="text"] {
     text-align: center;
@@ -35,7 +43,6 @@ h1 {
     padding: 10px;
     font-size: 16px;
     width: 500px;
-    margin-left: 30%;
     margin-bottom: 100px;
 }
 
@@ -104,25 +111,54 @@ footer span {
     color: black;
 }
 
+
+
+
 .cardContainer {
-    height: 200px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    height: 10%;
     width: 100%;
+    /* border: orange 3px solid; */
+    align-self: center;
 }
 
 .imagemCard {
-    width: 150px; height: 150px;
+    /* width: 150px; height: 150px; */
+    width: 50%; height: 90%;
     margin-right: 10px;
-    margin-left: 200px;
-    
+    margin-left: 10px;
+    border: blue 3px solid;
 }
 
-.card {
-    display: inline-block;
+.card { /* informacoes do card */
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: aquamarine !important;
+    height: 100%; width: 50%;
 }
 
-.infos {
-    display: inline-block;
+.content {
+    padding-top: 15px;
+    background-color: rgb(44, 44, 44);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.infos { /* card inteiro */
+    /* display: inline-block; */
+    display: flex;
     margin-right: 10px;
+    border: rgb(1, 65, 1) 3px solid;
+    background-color: antiquewhite;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
 }
 
 button {

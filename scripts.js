@@ -50,7 +50,9 @@ async function criaCard(characters) {
                     Visto a última vez em: <br>
                     <b>${episodeLink}</b>
                 </p>
-            `;
+            `
+
+            infos.innerHTML += ``;
 
             infos.append(card);
             cardContainer.append(infos);
