@@ -126,6 +126,12 @@ async function procuraPersonagem() {
             renderizarConteudo(response.data.results);
         } catch (err) {
             console.error('Erro ao pesquisar personagens', err);
+
+            const alert = document.createElement('div');
+            alert.classList.add('alert');
+            lista.innerHTML = `<div class="alertError alert-dismissible" role="alert">  </div>`
+
+            lista.append(alert);
         }
     } 
     else {
