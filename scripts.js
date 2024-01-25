@@ -50,12 +50,40 @@ async function criaCard(characters) {
                     Visto a última vez em: <br>
                     <b>${episodeLink}</b>
                 </p>
+                <button type="button" class="btn-abrir btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${j}"> Abrir Card </button>
+
+                <div class="modal fade" id="exampleModal${j}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">${character.name}</h1>
+                </div>
+                <div class="modal-body">
+
+                <img class="modal-image" src="${character.image}">
+
+                <h4 class="status-modal">${character.status} <span> - ${character.species}</span></h4>
+                <p class="ultimaLocal-modal">
+                    Última localização conhecida <br>
+                    <b>${character.location.name}</b>
+                </p>
+                <p class="ultimoEP-modal">
+                    Visto a última vez em: <br>
+                    <b>${episodeLink}</b>
+                </p>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
             `
 
             infos.innerHTML += ``;
 
             infos.append(card);
             cardContainer.append(infos);
+
         }
 
         lista.append(cardContainer);
