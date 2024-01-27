@@ -1,7 +1,5 @@
 * {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* margin: 0;
-    padding: 0; */
 }
 
 .background {
@@ -49,7 +47,6 @@ header {
 
 h1 {
     text-align: center;
-    /* color: rgb(0, 87, 0) !important; */
     font-size: 60px !important;
     margin-bottom: 30px !important;
     animation: colorChange 3s infinite ;
@@ -77,17 +74,7 @@ h1 {
     height: 4px;
     background-color: azure;
     width: 10%;
-    animation: dividir 3s infinite;
-}
-
-@keyframes dividir {
-        from {
-          width: 100%;
-        }
-      
-        to {
-          width: 1%;
-        }
+    animation: dividir 3s infinite cubic-bezier(0.165, 0.84, 0.44, 1) alternate;
 }
 
 footer {
@@ -116,18 +103,6 @@ footer span {
 }
 
 /* CARDS */
-
-/* card.innerHTML = `
-            <img class="imagemCard" src="${character.image}">`
-            infos.innerHTML = `
-                <h2 class="nome" > ${character.name}</h2>
-                <h3 class="status" >${character.status} - ${character.species}</h3>
-                <p class="ultimaLocal">
-                    Última localização conhecida <br>
-                    <b> ${character.location.name} </b> </p>
-                <p class="ultimoEP">
-                    Visto a última vez em: <b> ${episodeLink} </b> </p>
-                ` */
 
 .nome {
     color: white;
@@ -160,29 +135,23 @@ footer span {
     color: rgb(255, 255, 255);
 }
 
-
-
-
 .cardContainer {
     display: flex;
-    /* align-items: center; */
     justify-content: space-around;
     height: 10%;
     width: 100%;
-    /* border: orange 3px solid; */
     align-self: center;
     margin-bottom: 20px;
 }
 
 .imagemCard {
-    /* width: 150px; height: 150px; */
     width: 50%; height: 90%;
     margin-right: 10px;
     margin-left: 10px;
     border: rgb(22, 47, 22) 5px solid;
 }
 
-.card { /* informacoes do card */
+.card { 
     margin-left: 10px;
     margin-right: 10px;
     padding-left: 10px;
@@ -193,16 +162,13 @@ footer span {
 
 .content {
     padding-top: 15px;
-    /* background-color: rgb(44, 44, 44); */
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
 }
 
-.infos { /* card inteiro */
-    /* display: inline-block; */
+.infos { 
     display: flex;
     margin-right: 10px;
     border: rgb(22, 47, 22) 5px solid;
@@ -247,7 +213,6 @@ button:hover {
 .modal-title {
     width: 100%;
     height: 100%;
-    /* border: 3px red solid; */
     margin: 0 !important;
 }
 
@@ -275,13 +240,11 @@ button:hover {
 }
 
 .status-modal {
-    /* border: 2px red solid; */
     color: green;
     margin-bottom: 20px;
 }
 
 .ultimaLocal-modal {
-    /* border: 2px red solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -292,7 +255,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 2px red solid;   */
 }
 
 .btn-abrir {
@@ -313,6 +275,15 @@ button:hover {
     50% { color: white ; }
     100% { color:  rgb(7, 71, 7) ; }
   }
+
+  @keyframes dividir {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 1%;
+    }
+}
   
 
 

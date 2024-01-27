@@ -88,9 +88,6 @@ async function criaCard(characters) {
 
         lista.append(cardContainer);
 
-        // if (i + 2 < characters.length) {
-        //     lista.append(document.createElement('br'));
-        // }
     }
 }
 
