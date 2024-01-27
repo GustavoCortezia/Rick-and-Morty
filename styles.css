@@ -24,6 +24,7 @@ header {
     border-bottom: 8px solid rgb(22, 47, 22);
     margin-bottom: 100px;
     padding-bottom: 100px;
+    animation: backgroundChange 3s infinite;
 }
 
 
@@ -48,11 +49,13 @@ header {
 
 h1 {
     text-align: center;
-    color: rgb(0, 87, 0) !important;
+    /* color: rgb(0, 87, 0) !important; */
     font-size: 60px !important;
     margin-bottom: 30px !important;
+    animation: colorChange 3s infinite ;
 
 }
+
 
 .input-pesquisa {
     display: flex;
@@ -68,6 +71,23 @@ h1 {
     font-size: 16px;
     width: 500px;
     margin-bottom: 100px;
+}
+
+.bloquinho {
+    height: 4px;
+    background-color: azure;
+    width: 10%;
+    animation: dividir 3s infinite;
+}
+
+@keyframes dividir {
+        from {
+          width: 100%;
+        }
+      
+        to {
+          width: 1%;
+        }
 }
 
 footer {
@@ -224,9 +244,6 @@ button:hover {
 
 /* MODAL */
 
-.modal-content { 
-}
-
 .modal-title {
     width: 100%;
     height: 100%;
@@ -283,3 +300,49 @@ button:hover {
 }
 
 
+/* ANIMATIONS  */
+
+  @keyframes backgroundChange {
+    0% { background-color: white ; }
+    50% { background-color: rgb(7, 71, 7) ; }
+    100% { background-color: white ; }
+  }
+
+  @keyframes colorChange {
+    0% { color: rgb(7, 71, 7) ; }
+    50% { color: white ; }
+    100% { color:  rgb(7, 71, 7) ; }
+  }
+  
+
+
+
+  /* ALERTA */
+
+ .alert {
+    display: flex;
+    justify-content: center;
+ }
+
+
+
+ @media (max-width: 913px) {
+
+        .cardContainer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 50%;
+            width: 100%;
+            margin-bottom: 0px;
+        }
+        
+        .infos {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+  }

@@ -56,7 +56,7 @@ async function criaCard(characters) {
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">${character.name}</h1>
+                  <h2 class="modal-title fs-5" id="exampleModalLabel">${character.name}</h2>
                 </div>
                 <div class="modal-body">
 
@@ -88,9 +88,9 @@ async function criaCard(characters) {
 
         lista.append(cardContainer);
 
-        if (i + 2 < characters.length) {
-            lista.append(document.createElement('br'));
-        }
+        // if (i + 2 < characters.length) {
+        //     lista.append(document.createElement('br'));
+        // }
     }
 }
 
@@ -155,9 +155,16 @@ async function procuraPersonagem() {
         } catch (err) {
             console.error('Erro ao pesquisar personagens', err);
 
-            const alert = document.createElement('div');
-            alert.classList.add('alert');
-            lista.innerHTML = `<div class="alertError alert-dismissible" role="alert">  </div>`
+            const alerta = document.createElement('div');
+            alerta.classList.add('alerta');
+            lista.innerHTML = `
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <div class="alertaErro">
+                    ERRO: Este personagem não existe 
+                </div>
+            </div>
+
+            `
 
             lista.append(alert);
         }
